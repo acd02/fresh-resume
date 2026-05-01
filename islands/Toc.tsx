@@ -1,18 +1,31 @@
+import type { VNode } from "preact";
 import { cx } from "class-variance-authority";
-import { TableOfContents } from "lucide-preact";
 import type { Toc as TocType } from "@/types/index.ts";
 import { activeItems, slugify } from "@/utils.ts";
 import { TOC_ID } from "@/constants.ts";
 
-export interface Props {
+type BaseProps = {
   toc: TocType;
   className?: string;
   id?: string;
-  hideHeader?: boolean;
   onEntryClick?: () => void;
-}
+};
 
-export function Toc({ toc, className, id, hideHeader, onEntryClick }: Props) {
+type WithHeader = BaseProps & {
+  hideHeader?: false;
+  icon: VNode;
+};
+
+type WithoutHeader = BaseProps & {
+  hideHeader: true;
+  icon?: never;
+};
+
+type Props = WithHeader | WithoutHeader;
+
+export function Toc(
+  { toc, className, id, icon, hideHeader, onEntryClick }: Props,
+) {
   const activeItemsSet = activeItems.value;
 
   return (
@@ -24,7 +37,7 @@ export function Toc({ toc, className, id, hideHeader, onEntryClick }: Props) {
       {!hideHeader && (
         <div class="border border-slate-200 px-2 py-1 inline-block rounded-lg">
           <div class="flex items-center gap-x-1">
-            <TableOfContents />
+            {icon}
             <div>
               <h3 id={TOC_ID} class="text-lg font-semibold not-prose">
                 table of contents

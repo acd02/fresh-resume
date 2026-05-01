@@ -1,3 +1,4 @@
+import { TableOfContents } from "lucide-preact";
 import { Head } from "fresh/runtime";
 import { define } from "@/utils.ts";
 import { TOC_ID } from "@/constants.ts";
@@ -41,13 +42,14 @@ export default define.page(function Home(ctx) {
 
         <div class="[grid-area:right] hidden xl:block">
           <Toc
+            icon={<TableOfContents />}
             className="sticky xl:top-4 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/40 shadow-lg"
             toc={toc}
           />
         </div>
 
         <div class="[grid-area:bottom] sticky bottom-0 xl:hidden">
-          <TocTriggerMobile toc={toc} />
+          <TocTriggerMobile icon={<TableOfContents />} toc={toc} />
         </div>
       </div>
     </>

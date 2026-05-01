@@ -1,4 +1,4 @@
-import { TableOfContents } from "lucide-preact";
+import type { VNode } from "preact";
 import { useId, useState } from "preact/hooks";
 import { cx } from "class-variance-authority";
 
@@ -7,9 +7,10 @@ import { Toc } from "@/islands/Toc.tsx";
 
 interface Props {
   toc: TocType;
+  icon: VNode;
 }
 
-export function TocTriggerMobile({ toc }: Props) {
+export function TocTriggerMobile({ toc, icon }: Props) {
   const [isTocOpen, setIsTocOpen] = useState(false);
 
   const id = useId();
@@ -44,7 +45,7 @@ export function TocTriggerMobile({ toc }: Props) {
         aria-controls={id}
       >
         <span class="flex items-center gap-x-1">
-          <TableOfContents />
+          {icon}
         </span>
         <span>
           {isTocOpen ? "close table of contents" : "see table of contents"}
