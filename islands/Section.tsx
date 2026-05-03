@@ -2,6 +2,8 @@ import type { ComponentChildren, VNode } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import type { Title } from "@/types/index.ts";
 import { activeItems, slugify } from "@/utils.ts";
+import { useComputed } from "@preact/signals";
+import { cx } from "class-variance-authority";
 
 export interface Props {
   title: Title;
@@ -11,8 +13,9 @@ export interface Props {
 
 export function Section({ title, icon, children }: Props) {
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const isActive = useComputed(() => activeItems.value.has(title));
 
-  useEffect(() => {
+  useEffect(function handleIntersectionObserver() {
     if (!headingRef.current) return;
 
     const observer = new IntersectionObserver(
@@ -39,7 +42,14 @@ export function Section({ title, icon, children }: Props) {
 
   return (
     <>
-      <h3 class="text-slate-900" ref={headingRef} id={slugify(title)}>
+      <h3
+        class={cx(
+          "text-slate-900 transition-colors duration-500",
+          isActive.value && "text-purple-900!",
+        )}
+        ref={headingRef}
+        id={slugify(title)}
+      >
         <span class="flex items-center gap-x-1">
           {icon}
           <span>{title}</span>

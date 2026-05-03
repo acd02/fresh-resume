@@ -1,7 +1,7 @@
 import { TableOfContents } from "lucide-preact";
 import { Head } from "fresh/runtime";
 import { define } from "@/utils.ts";
-import { TOC_ID } from "@/constants.ts";
+import { TOC_HEADER_ID } from "@/constants.ts";
 
 import { Header } from "@/components/Header.tsx";
 
@@ -20,11 +20,11 @@ export default define.page(function Home(ctx) {
   return (
     <>
       <Head>
-        <title>Alex Cadiot's resume</title>
+        <title>Alexandre Cadiot's resume</title>
       </Head>
 
       <a
-        href={`#${TOC_ID}`}
+        href={`#${TOC_HEADER_ID}`}
         class="hidden xl:block xl:left-1/2 xl:-translate-y-1/2 xl:fixed xl:top-4 xl:not-focus:sr-only"
       >
         Skip to table of content

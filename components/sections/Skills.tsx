@@ -8,7 +8,7 @@ export interface Props {
 }
 
 export function Skills({ subTitles = [] }: Props) {
-  const getContent = (subTitle: SubTitle[number]) => {
+  const getContent = (subTitle: SubTitle) => {
     switch (true) {
       case subTitle === "HTML":
         return (

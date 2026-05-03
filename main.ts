@@ -1,28 +1,11 @@
 import { App, staticFiles } from "fresh";
 import { define, type State } from "./utils.ts";
-import type { Toc } from "@/types/index.ts";
+
+import { toc } from "@/constants.ts";
 
 export const app = new App<State>();
 
 app.use(staticFiles());
-
-const toc: Toc = [
-  { title: "What I Do" },
-  {
-    title: "Skills",
-    subTitles: [
-      "HTML",
-      "CSS",
-      "JS",
-      "Libs / Framerworks",
-      "Back-end",
-      "Testing",
-      "Workflow",
-    ],
-  },
-  { title: "Experience" },
-  { title: "Education" },
-];
 
 // Pass a shared value from a middleware
 app.use(async (ctx) => {

@@ -1,9 +1,10 @@
 import type { VNode } from "preact";
-import { useId, useState } from "preact/hooks";
+import { useSignal } from "@preact/signals";
 import { cx } from "class-variance-authority";
 
 import type { Toc as TocType } from "@/types/index.ts";
 import { Toc } from "@/islands/Toc.tsx";
+import { TOC_ID } from "@/constants.ts";
 
 interface Props {
   toc: TocType;
@@ -11,18 +12,16 @@ interface Props {
 }
 
 export function TocTriggerMobile({ toc, icon }: Props) {
-  const [isTocOpen, setIsTocOpen] = useState(false);
+  const isTocOpen = useSignal(false);
 
-  const id = useId();
-
-  const closeToc = () => setIsTocOpen(false);
-  const toggleToc = () => setIsTocOpen((open) => !open);
+  const closeToc = () => isTocOpen.value = false;
+  const toggleToc = () => isTocOpen.value = !isTocOpen.value;
 
   return (
     <>
-      {isTocOpen && (
+      {isTocOpen.value && (
         <Toc
-          id={id}
+          id={TOC_ID}
           hideHeader
           className={cx(
             "w-3/4 max-w-none mx-auto py-2 bottom-6 relative",
@@ -41,14 +40,16 @@ export function TocTriggerMobile({ toc, icon }: Props) {
           "bg-slate-400 text-md cursor-pointer rounded-full",
         )}
         onClick={toggleToc}
-        aria-expanded={isTocOpen}
-        aria-controls={id}
+        aria-expanded={isTocOpen.value}
+        aria-controls={TOC_ID}
       >
         <span class="flex items-center gap-x-1">
           {icon}
         </span>
         <span>
-          {isTocOpen ? "close table of contents" : "see table of contents"}
+          {isTocOpen.value
+            ? "close table of contents"
+            : "see table of contents"}
         </span>
       </button>
     </>
