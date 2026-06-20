@@ -38,6 +38,8 @@
     "npm:@tailwindcss/typography@~0.5.19": "0.5.19_tailwindcss@4.2.4",
     "npm:@tailwindcss/vite@^4.1.12": "4.2.4_vite@7.3.2",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
+    "npm:@zag-js/preact@^1.41.2": "1.41.2_preact@10.29.1",
+    "npm:@zag-js/select@^1.41.2": "1.41.2",
     "npm:class-variance-authority@~0.7.1": "0.7.1",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
@@ -749,6 +751,22 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
+    "@floating-ui/core@1.7.5": {
+      "integrity": "sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==",
+      "dependencies": [
+        "@floating-ui/utils"
+      ]
+    },
+    "@floating-ui/dom@1.7.6": {
+      "integrity": "sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==",
+      "dependencies": [
+        "@floating-ui/core",
+        "@floating-ui/utils"
+      ]
+    },
+    "@floating-ui/utils@0.2.11": {
+      "integrity": "sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg=="
+    },
     "@jridgewell/gen-mapping@0.3.13": {
       "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
       "dependencies": [
@@ -1084,6 +1102,96 @@
     "@types/estree@1.0.8": {
       "integrity": "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w=="
     },
+    "@zag-js/anatomy@1.41.2": {
+      "integrity": "sha512-Fm9hqdrvaCzCsdcf19G8WZxYtHElKltkGHdhqMEt4XU+ULTr1DK7KbOtDDv9J27CuzqSLALUz5QfRjPftoKHwg=="
+    },
+    "@zag-js/collection@1.41.2": {
+      "integrity": "sha512-ZZWuvfPZI8ccWd4aLpuU47k1jSc9eO+F3FM3iBJuvgegCH6g3+HDEwGN6wdePHnYfv7zyIKCGKr816zXcIWQbw==",
+      "dependencies": [
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/core@1.41.2": {
+      "integrity": "sha512-xXTN3zKwOtMI4+5dG2cG+T1B4WR3X9alXiYaPJKaGd4N2eYRj9JEPte3Hv9gtFm+RM0b9VIwksHEg25rqE4apw==",
+      "dependencies": [
+        "@zag-js/dom-query",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/dismissable@1.41.2": {
+      "integrity": "sha512-hO/tFhRZ7S+LOOljGOQJIubbc3MXg41+iWR1yUXKl76cAenbxaCit1LZmUCwQPvRN0GndK6bDQo5ETjHZz/k7A==",
+      "dependencies": [
+        "@zag-js/dom-query",
+        "@zag-js/interact-outside",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/dom-query@1.41.2": {
+      "integrity": "sha512-+eBk1nlJA312mNmY/GSThLRwcCRqMIL+A1pLsWvTlQLQjmH1/UxoAuv6l2yvRCT33XmC8FBlBIKnXhOCpDvIZA==",
+      "dependencies": [
+        "@zag-js/types"
+      ]
+    },
+    "@zag-js/focus-visible@1.41.2": {
+      "integrity": "sha512-oRjwtgafUdGVwLJUN6mKsnBQbez/CHYAPkPg1FxOnr5GFpEpr8oMTOZJ3wdPM2U1ynS9QnUUu/sXc3KQv/jX0Q==",
+      "dependencies": [
+        "@zag-js/dom-query"
+      ]
+    },
+    "@zag-js/interact-outside@1.41.2": {
+      "integrity": "sha512-dM4Fn9iyqQeqkCMRYZP+bAgWEPKRVQRqMmcPsN0OXBhhFKC31Em15LTIZXaOtVKAjH+iwx+UvSYFRiWwEjkOEA==",
+      "dependencies": [
+        "@zag-js/dom-query",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/popper@1.41.2": {
+      "integrity": "sha512-Iz4D5YAIiIPn4IHGjhX3QatR/RyGaDt43lBSZv0RYcPQYtFg9sUuek3wizjW9qXgdvItevvNMqRdpl7f3es09g==",
+      "dependencies": [
+        "@floating-ui/dom",
+        "@zag-js/dom-query",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/preact@1.41.2_preact@10.29.1": {
+      "integrity": "sha512-phS4wjum0vTTOYPCodzumeJeK0o+CG6t6wh1wxyfRQzk6Wh2irnkM+N0IJp97RtgvOcM8zH7hcQV5UR6PJTIVg==",
+      "dependencies": [
+        "@zag-js/core",
+        "@zag-js/store",
+        "@zag-js/types",
+        "@zag-js/utils",
+        "preact"
+      ]
+    },
+    "@zag-js/select@1.41.2": {
+      "integrity": "sha512-3wGaKABILexoNBJ1bJiHqLLTctR/VMZaNA4cyKiqZeBEWtAkdMhgyY2xKobrP6KtUTqAeUFNVSTu4yCDrAQnUw==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/collection",
+        "@zag-js/core",
+        "@zag-js/dismissable",
+        "@zag-js/dom-query",
+        "@zag-js/focus-visible",
+        "@zag-js/popper",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/store@1.41.2": {
+      "integrity": "sha512-dVZF7E1ezXzynrKhMH3rfSr2rBbCfvTjvXbXz7//1PNULuq58UU5dG93V+9l834npCZxI2+PrpY45wZLJPTsIA==",
+      "dependencies": [
+        "proxy-compare"
+      ]
+    },
+    "@zag-js/types@1.41.2": {
+      "integrity": "sha512-L6CNvK06lIVpy0X8eG3kbDIx8Uuv+3KHElxXYSzRXSJ7/OLCv1sTRgEvnxNtdIWOrksGgxF4JtT7PXtoClGqNQ==",
+      "dependencies": [
+        "csstype"
+      ]
+    },
+    "@zag-js/utils@1.41.2": {
+      "integrity": "sha512-Yj8FSrR7vGA6ahUhjrThfHAF+PM2Y1Yv2lkXkqZZd60mPBhixcot1+SHOfEMV63JimQcWrmQ8QbeYYMmF+ZpLQ=="
+    },
     "baseline-browser-mapping@2.10.24": {
       "integrity": "sha512-I2NkZOOrj2XuguvWCK6OVh9GavsNjZjK908Rq3mIBK25+GD8vPX5w2WdxVqnQ7xx3SrZJiCiZFu+/Oz50oSYSA==",
       "bin": true
@@ -1117,6 +1225,9 @@
     "cssesc@3.0.0": {
       "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
       "bin": true
+    },
+    "csstype@3.2.3": {
+      "integrity": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ=="
     },
     "debug@4.4.3": {
       "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
@@ -1416,6 +1527,9 @@
     "preact@10.29.1": {
       "integrity": "sha512-gQCLc/vWroE8lIpleXtdJhTFDogTdZG9AjMUpVkDf2iTCNwYNWA+u16dL41TqUDJO4gm2IgrcMv3uTpjd4Pwmg=="
     },
+    "proxy-compare@3.0.1": {
+      "integrity": "sha512-V9plBAt3qjMlS1+nC8771KNf6oJ12gExvaxnNzN/9yVRLdTv/lc+oJlnSzrdYDAvBfTStPCoiaCOTmTs0adv7Q=="
+    },
     "rollup@4.60.2": {
       "integrity": "sha512-J9qZyW++QK/09NyN/zeO0dG/1GdGfyp9lV8ajHnRVLfo/uFsbji5mHnDgn/qYdUHyCkM2N+8VyspgZclfAh0eQ==",
       "dependencies": [
@@ -1510,6 +1624,8 @@
       "npm:@tailwindcss/typography@~0.5.19",
       "npm:@tailwindcss/vite@^4.1.12",
       "npm:@types/babel__core@^7.20.5",
+      "npm:@zag-js/preact@^1.41.2",
+      "npm:@zag-js/select@^1.41.2",
       "npm:class-variance-authority@~0.7.1",
       "npm:lucide-preact@^1.14.0",
       "npm:preact@^10.29.1",
