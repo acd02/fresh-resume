@@ -12,7 +12,11 @@ export function WhatIDo() {
       <p>
         I like using design systems (because it’s just easier to maintain and it
         scales better). I actually worked on{" "}
-        <a href="https://sparkui.vercel.app/?path=/docs/introduction--docs">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://sparkui.vercel.app/?path=/docs/introduction--docs"
+        >
           one
         </a>{" "}
         at my current company.
@@ -32,6 +36,18 @@ export function WhatIDo() {
         On a regular basis, they help me catch bugs or regressions, and those
         can show up fast when doing some refactoring or simply when a lot of
         people interact with the codebase
+      </p>
+
+      <p>
+        As a senior engineer, part of my time extends beyond my immediate team.
+        That means contributing to cross-cutting concerns: refining global
+        guidelines, auditing or prototyping with libraries that could improve
+        the codebase or DX.
+      </p>
+
+      <p>
+        It also means mentoring developers and helping them grow in their
+        careers.
       </p>
     </Section>
   );

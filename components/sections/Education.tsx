@@ -12,7 +12,11 @@ export function Education() {
 
           <ul>
             <li>
-              <a href="https://www.francecompetences.fr/recherche/rncp/15364/">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.francecompetences.fr/recherche/rncp/15364/"
+              >
                 web development bachelor’s degree
               </a>
             </li>

@@ -15,19 +15,37 @@ export function Header() {
         <span class="flex items-center gap-x-1">
           <Code2 />
           <span>
-            <a href="https://github.com/acd02">https://github.com/acd02</a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/acd02"
+            >
+              https://github.com/acd02
+            </a>
           </span>
         </span>
         <span class="flex items-center gap-x-1">
           <Zap />
           <span>
-            <a href="https://stackblitz.com/@acd02/collections">stackblitz</a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://stackblitz.com/@acd02/collections"
+            >
+              stackblitz
+            </a>
           </span>
         </span>
         <span class="flex items-center gap-x-1">
           <Play color="#ea580c" fill="#ea580c" />
           <span>
-            current position @<a href="https://www.leboncoin.fr/">leboncoin</a>
+            current position @<a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.leboncoin.fr/"
+            >
+              leboncoin
+            </a>
           </span>
         </span>
       </div>

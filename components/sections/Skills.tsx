@@ -45,15 +45,30 @@ export function Skills({ subTitles = [] }: Props) {
               <li>TypeScript</li>
               <li>ES6 &amp; beyond</li>
               <li>
-                <a href="https://facebookarchive.github.io/flux/docs/in-depth-overview/">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://facebookarchive.github.io/flux/docs/in-depth-overview/"
+                >
                   Flux-like architectures
                 </a>
               </li>
               <li>Functional programming (as far as JS goes)</li>
               <li>
-                State machines (<a href="https://xstate.js.org/docs/">
+                State machines (<a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://xstate.js.org/docs/"
+                >
                   XState
-                </a>, <a href="https://thisrobot.life/">Robot</a>)
+                </a>,{" "}
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://thisrobot.life/"
+                >
+                  Robot
+                </a>)
               </li>
             </ul>
           </li>
@@ -67,36 +82,58 @@ export function Skills({ subTitles = [] }: Props) {
             </h4>
             <ul>
               <li>
-                React:
-                <ul>
-                  <li>Next.js</li>
-                  <li>
-                    <a href="https://tanstack.com/query/latest">
-                      TanStack Query
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://valtio.dev/">Valtio</a>
-                  </li>
-                </ul>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://react.dev/"
+                >
+                  React
+                </a>
               </li>
               <li>
-                <a href="https://astro.build/">Astro</a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://nextjs.org/"
+                >
+                  Next.js
+                </a>
               </li>
               <li>
-                <a href="https://zagjs.com/">Zag</a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://astro.build/"
+                >
+                  Astro
+                </a>
               </li>
               <li>
-                Lodash / Ramda (but I don’t really use them anymore, as I now
-                favor vanilla JS)
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://tanstack.com/query/latest"
+                >
+                  TanStack Query
+                </a>
               </li>
               <li>
-                <del>
-                  <a href="https://gcanti.github.io/fp-ts/">fp-ts</a>
-                </del>{" "}
-                (helped me grasp FP concepts, but makes code way too convoluted
-                {" "}
-                <span aria-hidden="true">🤕</span>)
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://zagjs.com/"
+                >
+                  Zag
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://valtio.dev/"
+                >
+                  Valtio
+                </a>
               </li>
             </ul>
           </li>
@@ -110,7 +147,14 @@ export function Skills({ subTitles = [] }: Props) {
             </h4>
             <ul>
               <li>
-                Node.js / Express / <a href="https://hapi.dev/">Hapi</a>
+                Node.js / Express /{" "}
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://hapi.dev/"
+                >
+                  Hapi
+                </a>
               </li>
             </ul>
           </li>
@@ -125,7 +169,13 @@ export function Skills({ subTitles = [] }: Props) {
             <ul>
               <li>Jest / Vitest</li>
               <li>
-                <a href="https://testing-library.com/">Testing Library</a>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://testing-library.com/"
+                >
+                  Testing Library
+                </a>
               </li>
               <li>Playwright</li>
             </ul>
@@ -150,6 +200,7 @@ export function Skills({ subTitles = [] }: Props) {
                 <ul>
                   <li>Webpack</li>
                   <li>Prettier, eslint</li>
+                  <li>Vite</li>
                 </ul>
               </li>
               <li>
@@ -161,8 +212,9 @@ export function Skills({ subTitles = [] }: Props) {
               <li>
                 Design:
                 <ul>
-                  <li>Figma</li>
-                  <li>Sketch</li>
+                  <li>
+                    Figma / <del>Sketch</del>
+                  </li>
                 </ul>
               </li>
               <li>

@@ -7,22 +7,42 @@ export function Experience() {
       <ul>
         <li>
           <p>
-            <a href="https://www.leboncoin.fr/">Le Bon Coin</a>:
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.leboncoin.fr/"
+            >
+              Le Bon Coin
+            </a>:
           </p>
           <p>
             <em>from december 2019 to ?</em>
           </p>
           <ul>
-            <li>Handle real estate related ads</li>
+            <li>
+              Improving the real estate ads experience to bring it closer to
+              what dedicated property portals offer
+            </li>
             <li>
               On the{" "}
-              <a href="https://sparkui.vercel.app">Spark Design System</a> team
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://sparkui.vercel.app"
+              >
+                Spark Design System
+              </a>{" "}
+              team
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <a href="https://go.rithum.com/ecommerce-growth.html">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://go.rithum.com/ecommerce-growth.html"
+            >
               Blueboard (now acquired by Channel Advisor)
             </a>:
           </p>
@@ -42,7 +62,11 @@ export function Experience() {
         </li>
         <li>
           <p>
-            <a href="https://www.fabernovel.com/">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.fabernovel.com/"
+            >
               Fabernovel Technologies
             </a>:
           </p>
