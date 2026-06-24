@@ -12,6 +12,7 @@ import { Education } from "@/components/sections/Education.tsx";
 
 import { Toc } from "@/islands/Toc.tsx";
 import { TocTriggerMobile } from "@/islands/TocTriggerMobile.tsx";
+import { Select } from "@/islands/Select.tsx";
 
 export default define.page(function Home(ctx) {
   const toc = ctx.state.toc;
@@ -33,6 +34,8 @@ export default define.page(function Home(ctx) {
       <div class="xl:p-4 root fresh-gradient">
         <main id="main" class="p-4 prose xl:p-0 mb-10 [grid-area:main]">
           <Header />
+
+          <Select />
 
           <WhatIDo />
           <Skills subTitles={skillsSection?.subTitles} />
