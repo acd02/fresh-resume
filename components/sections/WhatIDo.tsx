@@ -10,8 +10,9 @@ export function WhatIDo() {
       </p>
 
       <p>
-        I like using design systems (because it’s just easier to maintain and it
-        scales better). I actually worked on{" "}
+        I like using <span class="font-semibold">design systems</span>{" "}
+        (because it’s just easier to maintain and it scales better). I actually
+        worked on{" "}
         <a
           rel="noopener noreferrer"
           target="_blank"
@@ -23,13 +24,16 @@ export function WhatIDo() {
       </p>
 
       <p>
-        Also, when the design system is developed with accessibility in mind,
-        the apps built on top will be more accessible from the get-go.
+        Also, when the design system is developed with{" "}
+        <span class="font-semibold">accessibility</span>{" "}
+        in mind, the apps built on top will be more accessible from the get-go.
       </p>
 
       <p>
-        When it comes to testing, writing them sure isn't always a walk in the
-        park, but I've learned the hard way they're valuable.
+        When it comes to{" "}
+        <span class="font-semibold">testing</span>, writing them sure isn't
+        always a walk in the park, but I've learned the hard way they're
+        valuable.
       </p>
 
       <p>
@@ -40,14 +44,15 @@ export function WhatIDo() {
 
       <p>
         As a senior engineer, part of my time extends beyond my immediate team.
-        That means contributing to cross-cutting concerns: refining global
-        guidelines, auditing or prototyping with libraries that could improve
-        the codebase or DX.
+        That means contributing to{" "}
+        <span class="font-semibold">cross-cutting concerns</span>: refining
+        global guidelines, auditing or prototyping with libraries that could
+        improve the codebase or DX.
       </p>
 
       <p>
-        It also means mentoring developers and helping them grow in their
-        careers.
+        It also means <span class="font-semibold">mentoring</span>{" "}
+        developers and helping them grow in their careers.
       </p>
     </Section>
   );
