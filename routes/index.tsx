@@ -1,57 +1,84 @@
-import { TableOfContents } from "lucide-preact";
-import { Head } from "fresh/runtime";
 import { define } from "@/utils.ts";
-import { TOC_HEADER_ID } from "@/constants.ts";
-
-import { Header } from "@/components/Header.tsx";
-
+import { Container } from "@/components/Container.tsx";
 import { WhatIDo } from "@/components/sections/WhatIDo.tsx";
-import { Skills } from "@/components/sections/Skills.tsx";
-import { Experience } from "@/components/sections/Experience.tsx";
-import { Education } from "@/components/sections/Education.tsx";
+import { DownloadCvButton } from "@/islands/DownloadCvButton.tsx";
+import type { LucideIcon } from "lucide-preact";
+import { CodeXml, Mail, Play, Zap } from "lucide-preact";
+import { Head } from "fresh/runtime";
 
-import { Toc } from "@/islands/Toc.tsx";
-import { TocTriggerMobile } from "@/islands/TocTriggerMobile.tsx";
+function SocialLink({
+  href,
+  label,
+  icon: Icon,
+  class: cls,
+}: {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  class?: string;
+}) {
+  return (
+    <li class={`flex ${cls ?? ""}`}>
+      <a
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+        class="group flex items-center text-sm font-medium text-zinc-800 transition hover:text-violet-700 dark:text-zinc-200 dark:hover:text-violet-700"
+      >
+        <Icon class="h-6 w-6 flex-none" />
+        <span class="ml-4">{label}</span>
+      </a>
+    </li>
+  );
+}
 
-export default define.page(function Home(ctx) {
-  const toc = ctx.state.toc;
-  const skillsSection = toc.find((entry) => entry.title === "Skills");
-
+export default define.page(function Home() {
   return (
     <>
       <Head>
-        <title>Alexandre Cadiot's resume</title>
+        <title>Alexandre Cadiot — Staff Frontend Engineer</title>
+        <meta name="description" content="Staff Frontend Engineer specialising in accessible, maintainable UIs and design systems." />
       </Head>
-
-      <a
-        href={`#${TOC_HEADER_ID}`}
-        class="hidden xl:block xl:left-1/2 xl:-translate-y-1/2 xl:fixed xl:top-4 xl:not-focus:sr-only"
-      >
-        Skip to table of content
-      </a>
-
-      <div class="xl:p-4 root fresh-gradient">
-        <main id="main" class="p-4 prose xl:p-0 mb-10 [grid-area:main]">
-          <Header />
-
-          <WhatIDo />
-          <Skills subTitles={skillsSection?.subTitles} />
-          <Experience />
-          <Education />
-        </main>
-
-        <div class="[grid-area:right] hidden xl:block">
-          <Toc
-            icon={<TableOfContents />}
-            className="sticky xl:top-4 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-700/40 shadow-lg"
-            toc={toc}
-          />
+      <Container class="mt-16 sm:mt-32">
+      <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+        <div class="lg:order-first lg:row-span-2">
+          <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            I'm Alexandre CADIOT, staff frontend engineer
+          </h1>
+          <div class="mt-6">
+            <WhatIDo />
+          </div>
         </div>
-
-        <div class="[grid-area:bottom] sticky bottom-0 xl:hidden">
-          <TocTriggerMobile icon={<TableOfContents />} toc={toc} />
+        <div class="lg:pl-20">
+          <div class="size-0 lg:size-72" />
+        </div>
+        <div class="lg:pl-20">
+          <DownloadCvButton />
+          <p class="mb-6 text-sm font-semibold flex dark:text-zinc-200 items-center gap-x-4">
+            <Play class="text-purple-400" /> current position @leboncoin
+          </p>
+          <ul role="list">
+            <SocialLink
+              href="https://github.com/acd02"
+              label="https://github.com/acd02"
+              icon={CodeXml}
+            />
+            <SocialLink
+              href="https://stackblitz.com/@acd02/collections"
+              label="StackBlitz"
+              icon={Zap}
+              class="mt-4"
+            />
+            <SocialLink
+              href="mailto:alex.acd02@gmail.com"
+              label="alex.acd02@gmail.com"
+              icon={Mail}
+              class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+            />
+          </ul>
         </div>
       </div>
+    </Container>
     </>
   );
 });

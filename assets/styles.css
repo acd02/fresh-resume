@@ -1,39 +1,25 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
-.root {
-  display: grid;
-  grid-template-areas:
-    "left main right"
-    "bottom bottom bottom";
-
-  grid-template-columns: minmax(0px, 1fr) minmax(auto, 768px) minmax(0px, 1fr);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 50%, 0);
+@media print {
+  .cv-page {
+    max-width: 100%;
+    padding: 12px;
   }
 
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  .cv-page section {
+    break-inside: avoid;
   }
-}
 
-.fadeInUp {
-  animation: fadeInUp 0.25s ease-out forwards;
-}
+  .cv-page li {
+    break-inside: avoid;
+  }
 
-.fresh-gradient {
-  background-image: linear-gradient(
-    to right,
-    rgb(226, 232, 240),
-    rgb(255, 255, 255)
-  );
+  .cv-page h2 {
+    break-after: avoid;
+  }
 }

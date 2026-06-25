@@ -1,242 +1,155 @@
-import { PocketKnife } from "lucide-preact";
-import { Section } from "@/islands/Section.tsx";
-import type { SubTitle } from "@/types/index.ts";
-import { slugify } from "@/utils.ts";
+import { SpotlightSection } from "@/components/SpotlightSection.tsx";
 
-export interface Props {
-  subTitles: SubTitle[] | undefined;
+function SkillList(
+  { items }: { items: (string | { label: string; href: string })[] },
+) {
+  return (
+    <ul class="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+      {items.map((item) =>
+        typeof item === "string"
+          ? <li key={item}>{item}</li>
+          : (
+            <li key={item.href}>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={item.href}
+                class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+              >
+                {item.label}
+              </a>
+            </li>
+          )
+      )}
+    </ul>
+  );
 }
 
-export function Skills({ subTitles = [] }: Props) {
-  const getContent = (subTitle: SubTitle) => {
-    switch (true) {
-      case subTitle === "HTML":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}</strong>
-            </h4>
-          </li>
-        );
-
-      case subTitle === "CSS":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>PostCSS</li>
-              <li>SCSS, Less, Stylus</li>
-              <li>CSS Modules</li>
-              <li>Tailwind</li>
-              <li>CSS-in-JS (Stitches, Emotion, styled-components…)</li>
-            </ul>
-          </li>
-        );
-
-      case subTitle === "JS":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>TypeScript</li>
-              <li>ES6 &amp; beyond</li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://facebookarchive.github.io/flux/docs/in-depth-overview/"
-                >
-                  Flux-like architectures
-                </a>
-              </li>
-              <li>Functional programming (as far as JS goes)</li>
-              <li>
-                State machines (<a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://xstate.js.org/docs/"
-                >
-                  XState
-                </a>,{" "}
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://thisrobot.life/"
-                >
-                  Robot
-                </a>)
-              </li>
-            </ul>
-          </li>
-        );
-
-      case subTitle === "Libs / Framerworks":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://react.dev/"
-                >
-                  React
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://nextjs.org/"
-                >
-                  Next.js
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://astro.build/"
-                >
-                  Astro
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://tanstack.com/query/latest"
-                >
-                  TanStack Query
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://zagjs.com/"
-                >
-                  Zag
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://valtio.dev/"
-                >
-                  Valtio
-                </a>
-              </li>
-            </ul>
-          </li>
-        );
-
-      case subTitle === "Back-end":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>
-                Node.js / Express /{" "}
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://hapi.dev/"
-                >
-                  Hapi
-                </a>
-              </li>
-            </ul>
-          </li>
-        );
-
-      case subTitle === "Testing":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>Jest / Vitest</li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://testing-library.com/"
-                >
-                  Testing Library
-                </a>
-              </li>
-              <li>Playwright</li>
-            </ul>
-          </li>
-        );
-
-      case subTitle === "Workflow":
-        return (
-          <li>
-            <h4 id={slugify(subTitle)}>
-              <strong>{subTitle}:</strong>
-            </h4>
-            <ul>
-              <li>
-                Versioning:
-                <ul>
-                  <li>git</li>
-                </ul>
-              </li>
-              <li>
-                Tooling:
-                <ul>
-                  <li>Webpack</li>
-                  <li>Prettier, eslint</li>
-                  <li>Vite</li>
-                </ul>
-              </li>
-              <li>
-                Tracking:
-                <ul>
-                  <li>jira</li>
-                </ul>
-              </li>
-              <li>
-                Design:
-                <ul>
-                  <li>
-                    Figma / <del>Sketch</del>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Work methodology:
-                <ul>
-                  <li>Agile</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        );
-
-      default:
-        return;
-    }
-  };
-
+export function Skills() {
   return (
-    <Section title="Skills" icon={<PocketKnife />}>
-      <ul>
-        {subTitles?.map(getContent)}
-      </ul>
-    </Section>
+    <div class="space-y-20">
+      <SpotlightSection title="HTML">
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">N/A</p>
+      </SpotlightSection>
+
+      <SpotlightSection title="CSS">
+        <SkillList
+          items={[
+            "PostCSS",
+            "SCSS, Less, Stylus",
+            "CSS Modules",
+            "Tailwind",
+            "CSS-in-JS (Stitches, Emotion, styled-components…)",
+          ]}
+        />
+      </SpotlightSection>
+
+      <SpotlightSection title="JS">
+        <SkillList
+          items={[
+            "TypeScript",
+            "ES6 & beyond",
+            {
+              label: "Flux-like architectures",
+              href:
+                "https://facebookarchive.github.io/flux/docs/in-depth-overview/",
+            },
+            "Functional programming (as far as JS goes)",
+          ]}
+        />
+        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          State machines (
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://xstate.js.org/docs/"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+          >
+            XState
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://thisrobot.life/"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+          >
+            Robot
+          </a>
+          )
+        </p>
+      </SpotlightSection>
+
+      <SpotlightSection title="Libs / Frameworks">
+        <SkillList
+          items={[
+            { label: "React", href: "https://react.dev/" },
+            { label: "Next.js", href: "https://nextjs.org/" },
+            { label: "Astro", href: "https://astro.build/" },
+            {
+              label: "TanStack Query",
+              href: "https://tanstack.com/query/latest",
+            },
+            { label: "Zag", href: "https://zagjs.com/" },
+            { label: "Valtio", href: "https://valtio.dev/" },
+          ]}
+        />
+      </SpotlightSection>
+
+      <SpotlightSection title="Back-end">
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">
+          Node.js / Express /{" "}
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://hapi.dev/"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+          >
+            Hapi
+          </a>
+        </p>
+      </SpotlightSection>
+
+      <SpotlightSection title="Testing">
+        <SkillList
+          items={[
+            "Jest / Vitest",
+            { label: "Testing Library", href: "https://testing-library.com/" },
+            "Playwright",
+          ]}
+        />
+      </SpotlightSection>
+
+      <SpotlightSection title="Workflow">
+        <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
+          <div>
+            <p class="font-medium text-zinc-700 dark:text-zinc-300">
+              Versioning
+            </p>
+            <p>git</p>
+          </div>
+          <div>
+            <p class="font-medium text-zinc-700 dark:text-zinc-300">Tooling</p>
+            <p>Webpack, Prettier, eslint, Vite</p>
+          </div>
+          <div>
+            <p class="font-medium text-zinc-700 dark:text-zinc-300">Tracking</p>
+            <p>Jira</p>
+          </div>
+          <div>
+            <p class="font-medium text-zinc-700 dark:text-zinc-300">Design</p>
+            <p>
+              Figma / <del>Sketch</del>
+            </p>
+          </div>
+          <div>
+            <p class="font-medium text-zinc-700 dark:text-zinc-300">
+              Methodology
+            </p>
+            <p>Agile</p>
+          </div>
+        </div>
+      </SpotlightSection>
+    </div>
   );
 }
