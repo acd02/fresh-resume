@@ -1,22 +1,20 @@
-import { Pen } from "lucide-preact";
-import { Section } from "@/islands/Section.tsx";
-
 export function WhatIDo() {
   return (
-    <Section title="What I Do" icon={<Pen />}>
+    <div class="max-w-2xl space-y-4 text-base text-zinc-600 dark:text-zinc-400">
       <p>
         Mostly, I build user interfaces, whether for single page apps or
         traditional websites.
       </p>
 
       <p>
-        I like using <span class="font-semibold">design systems</span>{" "}
-        (because it’s just easier to maintain and it scales better). I actually
+        I like using <span class="font-semibold">design systems,</span>{" "}
+        they reduce duplication across your codebase, which makes it a lot easier to maintain and scale. I actually
         worked on{" "}
         <a
           rel="noopener noreferrer"
           target="_blank"
           href="https://sparkui.vercel.app/?path=/docs/introduction--docs"
+          class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
         >
           one
         </a>{" "}
@@ -54,6 +52,6 @@ export function WhatIDo() {
         It also means <span class="font-semibold">mentoring</span>{" "}
         developers and helping them grow in their careers.
       </p>
-    </Section>
+    </div>
   );
 }
