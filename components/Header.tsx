@@ -49,7 +49,7 @@ interface Props {
   pathname: string;
 }
 
-export function SiteHeader({ pathname }: Props) {
+export function Header({ pathname }: Props) {
   return (
     <header class="pointer-events-none relative z-50 flex flex-none flex-col print:hidden">
       <div class="sticky top-0 z-10 h-16 pt-6">

@@ -1,6 +1,6 @@
 import { define } from "@/utils.ts";
 import { SimpleLayout } from "@/components/SimpleLayout.tsx";
-import { Skills } from "@/components/sections/Skills.tsx";
+import { Skills } from "@/components/pages/Skills.tsx";
 import { Head } from "fresh/runtime";
 
 export default define.page(function SkillsPage() {

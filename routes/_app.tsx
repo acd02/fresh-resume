@@ -1,6 +1,6 @@
 import { define } from "@/utils.ts";
-import { SiteHeader } from "@/components/SiteHeader.tsx";
-import { SiteFooter } from "@/components/SiteFooter.tsx";
+import { Header } from "@/components/Header.tsx";
+import { Footer } from "@/components/Footer.tsx";
 
 export default define.page(function App({ Component, url }) {
   const pathname = url.pathname;
@@ -21,11 +21,11 @@ export default define.page(function App({ Component, url }) {
           </div>
         </div>
         <div class="relative flex w-full flex-col">
-          <SiteHeader pathname={pathname} />
+          <Header pathname={pathname} />
           <main class="flex-auto">
             <Component />
           </main>
-          <SiteFooter />
+          <Footer />
         </div>
       </body>
     </html>

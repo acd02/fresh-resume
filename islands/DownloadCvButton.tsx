@@ -1,6 +1,10 @@
-import { ArrowDownToLine } from "lucide-preact";
+import type { VNode } from "preact";
 
-export function DownloadCvButton() {
+interface Props {
+  icon: VNode;
+}
+
+export function DownloadCvButton({ icon }: Props) {
   function handleClick() {
     const iframe = document.createElement("iframe");
     iframe.style.cssText = "position:fixed;width:0;height:0;opacity:0;";
@@ -21,7 +25,7 @@ export function DownloadCvButton() {
       onClick={handleClick}
       class="group mb-8 cursor-pointer flex items-center gap-2 rounded-md bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-800 ring-1 ring-zinc-900/5 transition hover:bg-zinc-100 dark:bg-zinc-800/50 dark:text-zinc-200 dark:ring-white/10 dark:hover:bg-zinc-800"
     >
-      <ArrowDownToLine class="h-4 w-4 flex-none stroke-zinc-400 transition group-hover:stroke-zinc-600 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+      {icon}
       Download CV
     </button>
   );

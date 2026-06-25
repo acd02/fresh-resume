@@ -1,4 +1,4 @@
-export function WhatIDo() {
+export function About() {
   return (
     <div class="max-w-2xl space-y-4 text-base text-zinc-600 dark:text-zinc-400">
       <p>
@@ -14,7 +14,7 @@ export function WhatIDo() {
           rel="noopener noreferrer"
           target="_blank"
           href="https://sparkui.vercel.app/?path=/docs/introduction--docs"
-          class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+          class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300 underline"
         >
           one
         </a>{" "}

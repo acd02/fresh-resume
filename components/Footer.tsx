@@ -7,7 +7,7 @@ const LINKS = [
   { href: "/education", label: "Education" },
 ];
 
-export function SiteFooter() {
+export function Footer() {
   return (
     <footer class="mt-32 flex-none print:hidden">
       <ContainerOuter>

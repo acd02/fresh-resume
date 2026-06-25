@@ -1,8 +1,8 @@
 import { define } from "@/utils.ts";
-import { WhatIDo } from "@/components/sections/WhatIDo.tsx";
-import { Skills } from "@/components/sections/Skills.tsx";
-import { Experience } from "@/components/sections/Experience.tsx";
-import { Education } from "@/components/sections/Education.tsx";
+import { About } from "@/components/pages/About.tsx";
+import { Skills } from "@/components/pages/Skills.tsx";
+import { Experience } from "@/components/pages/Experience.tsx";
+import { Education } from "@/components/pages/Education.tsx";
 import { Head } from "fresh/runtime";
 
 export default define.page(function CV() {
@@ -27,7 +27,7 @@ export default define.page(function CV() {
         <h2 class="mb-4 text-sm font-semibold uppercase tracking-widest text-zinc-400">
           About
         </h2>
-        <WhatIDo />
+        <About />
       </section>
 
       <section class="mb-12">

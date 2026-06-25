@@ -1,4 +1,4 @@
-import { SpotlightSection } from "@/components/SpotlightSection.tsx";
+import { LabeledItem } from "@/components/LabeledItem.tsx";
 
 function SkillList(
   { items }: { items: (string | { label: string; href: string })[] },
@@ -14,7 +14,7 @@ function SkillList(
                 rel="noopener noreferrer"
                 target="_blank"
                 href={item.href}
-                class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+                class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300 underline"
               >
                 {item.label}
               </a>
@@ -28,11 +28,11 @@ function SkillList(
 export function Skills() {
   return (
     <div class="space-y-20">
-      <SpotlightSection title="HTML">
+      <LabeledItem title="HTML">
         <p class="text-sm text-zinc-600 dark:text-zinc-400">N/A</p>
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="CSS">
+      <LabeledItem title="CSS">
         <SkillList
           items={[
             "PostCSS",
@@ -42,9 +42,9 @@ export function Skills() {
             "CSS-in-JS (Stitches, Emotion, styled-components…)",
           ]}
         />
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="JS">
+      <LabeledItem title="JS">
         <SkillList
           items={[
             "TypeScript",
@@ -63,7 +63,7 @@ export function Skills() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://xstate.js.org/docs/"
-            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300 underline"
           >
             XState
           </a>
@@ -72,15 +72,15 @@ export function Skills() {
             rel="noopener noreferrer"
             target="_blank"
             href="https://thisrobot.life/"
-            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300 underline"
           >
             Robot
           </a>
           )
         </p>
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="Libs / Frameworks">
+      <LabeledItem title="Libs / Frameworks">
         <SkillList
           items={[
             { label: "React", href: "https://react.dev/" },
@@ -94,23 +94,23 @@ export function Skills() {
             { label: "Valtio", href: "https://valtio.dev/" },
           ]}
         />
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="Back-end">
+      <LabeledItem title="Back-end">
         <p class="text-sm text-zinc-600 dark:text-zinc-400">
           Node.js / Express /{" "}
           <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://hapi.dev/"
-            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300"
+            class="text-violet-600 hover:text-violet-700 transition dark:text-violet-400 dark:hover:text-violet-300 underline"
           >
             Hapi
           </a>
         </p>
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="Testing">
+      <LabeledItem title="Testing">
         <SkillList
           items={[
             "Jest / Vitest",
@@ -118,9 +118,9 @@ export function Skills() {
             "Playwright",
           ]}
         />
-      </SpotlightSection>
+      </LabeledItem>
 
-      <SpotlightSection title="Workflow">
+      <LabeledItem title="Workflow">
         <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
           <div>
             <p class="font-medium text-zinc-700 dark:text-zinc-300">
@@ -149,7 +149,7 @@ export function Skills() {
             <p>Agile</p>
           </div>
         </div>
-      </SpotlightSection>
+      </LabeledItem>
     </div>
   );
 }

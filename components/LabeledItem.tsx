@@ -5,7 +5,7 @@ interface Props {
   children: ComponentChildren;
 }
 
-export function SpotlightSection({ title, children }: Props) {
+export function LabeledItem({ title, children }: Props) {
   return (
     <section class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
       <div class="grid grid-cols-1 items-baseline gap-y-4 md:gap-y-8 md:grid-cols-4">

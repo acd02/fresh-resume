@@ -1,6 +1,6 @@
 import { define } from "@/utils.ts";
 import { SimpleLayout } from "@/components/SimpleLayout.tsx";
-import { Experience } from "@/components/sections/Experience.tsx";
+import { Experience } from "@/components/pages/Experience.tsx";
 import { Head } from "fresh/runtime";
 
 export default define.page(function ExperiencePage() {
