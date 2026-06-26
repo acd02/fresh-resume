@@ -8,7 +8,7 @@ export default define.page(function App({ Component, url }) {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Alexandre Cadiot — wesh</title>
+        <title>Alexandre Cadiot — Staff Frontend Engineer</title>
         <meta
           name="description"
           content="Personal website and resume of Alexandre Cadiot, Staff Frontend Engineer."
