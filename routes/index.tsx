@@ -1,6 +1,7 @@
 import { define } from "@/utils.ts";
 import { Container } from "@/components/Container.tsx";
 import { About } from "@/components/pages/About.tsx";
+import { cx } from "class-variance-authority";
 import { DownloadCvButton } from "@/islands/DownloadCvButton.tsx";
 import type { LucideIcon } from "lucide-preact";
 import { ArrowDownToLine, CodeXml, Mail, Play, Zap } from "lucide-preact";
@@ -10,7 +11,7 @@ function SocialLink({
   href,
   label,
   icon: Icon,
-  class: cls,
+  class: className,
 }: {
   href: string;
   label: string;
@@ -18,7 +19,7 @@ function SocialLink({
   class?: string;
 }) {
   return (
-    <li class={`flex ${cls ?? ""}`}>
+    <li class={cx("flex", className)}>
       <a
         href={href}
         rel="noopener noreferrer"

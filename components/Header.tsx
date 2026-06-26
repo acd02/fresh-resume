@@ -73,7 +73,23 @@ export function Header({ pathname }: Props) {
 
             <div class="flex flex-1 justify-end md:justify-center">
               <div class="pointer-events-auto md:hidden">
-                <MobileNav pathname={pathname} />
+                <MobileNav>
+                  <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                    {NAV_LINKS.map(({ href, label }) => (
+                      <li key={href}>
+                        <a
+                          href={href}
+                          class={cx(
+                            "block py-2",
+                            pathname === href && "text-violet-600 dark:text-violet-400",
+                          )}
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </MobileNav>
               </div>
               <DesktopNav pathname={pathname} />
             </div>

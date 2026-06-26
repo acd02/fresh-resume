@@ -1,17 +1,12 @@
 import { useSignal } from "@preact/signals";
-
-const NAV_LINKS = [
-  { href: "/", label: "About" },
-  { href: "/skills", label: "Skills" },
-  { href: "/experience", label: "Experience" },
-  { href: "/education", label: "Education" },
-];
+import { cx } from "class-variance-authority";
+import type { ComponentChildren } from "preact";
 
 interface Props {
-  pathname: string;
+  children: ComponentChildren;
 }
 
-export function MobileNav({ pathname }: Props) {
+export function MobileNav({ children }: Props) {
   const isOpen = useSignal(false);
 
   return (
@@ -39,61 +34,47 @@ export function MobileNav({ pathname }: Props) {
         </svg>
       </button>
 
-      {isOpen.value && (
-        <>
-          <div
-            class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs dark:bg-black/80"
-            onClick={() => (isOpen.value = false)}
-          />
-          <div class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800">
-            <div class="flex flex-row-reverse items-center justify-between">
-              <button
-                type="button"
-                aria-label="Close menu"
-                class="-m-1 p-1"
-                onClick={() => (isOpen.value = false)}
+      <div class={cx(!isOpen.value && "hidden")}>
+        <div
+          class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs dark:bg-black/80"
+          onClick={() => (isOpen.value = false)}
+        />
+        <div class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800">
+          <div class="flex flex-row-reverse items-center justify-between">
+            <button
+              type="button"
+              aria-label="Close menu"
+              class="-m-1 p-1"
+              onClick={() => (isOpen.value = false)}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="h-6 w-6 text-zinc-500 dark:text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  class="h-6 w-6 text-zinc-500 dark:text-zinc-400"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-              <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
-            </div>
-            <nav aria-label="main" class="mt-6">
-              <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                {NAV_LINKS.map(({ href, label }) => (
-                  <li key={href}>
-                    <a
-                      href={href}
-                      class={`block py-2 ${
-                        pathname === href
-                          ? "text-violet-600 dark:text-violet-400"
-                          : ""
-                      }`}
-                      onClick={() => (isOpen.value = false)}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+              Navigation
+            </h2>
           </div>
-        </>
-      )}
+          <nav
+            aria-label="main"
+            class="mt-6"
+            onClick={() => (isOpen.value = false)}
+          >
+            {children}
+          </nav>
+        </div>
+      </div>
     </div>
   );
 }
